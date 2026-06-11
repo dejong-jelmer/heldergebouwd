@@ -35,4 +35,4 @@ src/
 
 ## Deploy
 
-`npm run build` genereert een volledig statische site in `dist/`. Te hosten op elke statische host (Netlify, Vercel, Cloudflare Pages); `public/_redirects` zorgt voor de SPA-fallback op Cloudefare.
+`npm run build` genereert een volledig statische site in `dist/`. Te hosten op elke statische host (Netlify, Vercel, Cloudflare Pages); `public/_redirects` zorgt voor de SPA-fallback op Cloudfare.
