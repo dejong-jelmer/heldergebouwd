@@ -17,7 +17,7 @@ npm run preview  # lokaal de productie-build bekijken
 
 ```
 index.html                  entry, Google Fonts (Inter)
-public/_redirects           SPA-fallback voor Netlify e.d.
+wrangler.jsonc              Cloudflare-config (assets + SPA-fallback)
 src/
   main.js                   app entry
   style.css                 Tailwind directives + smooth scroll
@@ -35,4 +35,4 @@ src/
 
 ## Deploy
 
-`npm run build` genereert een volledig statische site in `dist/`. Te hosten op elke statische host (Netlify, Vercel, Cloudflare Pages); `public/_redirects` zorgt voor de SPA-fallback op Cloudfare.
+`npm run build` genereert een volledig statische site in `dist/`. De site draait op Cloudflare (Workers static assets); `wrangler.jsonc` regelt de SPA-fallback via `not_found_handling: "single-page-application"`. Let op: Cloudflare accepteert géén `/* /index.html 200`-regel in een `_redirects`-bestand — dat geeft een infinite-loop-fout bij de deploy.
