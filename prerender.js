@@ -1,28 +1,38 @@
-// Post-build prerender: render the built SPA in a headless browser and write the
-// fully rendered static HTML back into dist/index.html so crawlers and
-// link-preview bots receive real content instead of an empty <div id="app">.
-import { preview } from 'vite'
-import puppeteer from 'puppeteer'
-import { writeFileSync } from 'node:fs'
+// Post-build prerender: render the app to static HTML in pure Node and inject it
+// into dist/index.html, so crawlers and link-preview bots receive real content
+// instead of an empty <div id="app">.
+//
+// This uses Vue's server renderer through a Vite SSR module loader. It launches
+// NO browser (no puppeteer/Chromium), so it runs inside restricted build
+// containers such as Cloudflare Pages.
+import { createServer } from 'vite'
+import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = dirname(fileURLToPath(import.meta.url))
 const indexPath = resolve(root, 'dist/index.html')
 
-const server = await preview({ root, preview: { port: 4173 } })
-const url = server.resolvedUrls.local[0]
+// A Vite dev server in middleware mode gives us its transform pipeline (so .vue,
+// .webp and .css imports resolve) without ever opening an HTTP port or a browser.
+const vite = await createServer({
+  root,
+  logLevel: 'warn',
+  server: { middlewareMode: true },
+  appType: 'custom',
+})
 
-const browser = await puppeteer.launch({ headless: true })
-const page = await browser.newPage()
-await page.goto(url, { waitUntil: 'networkidle2' })
-// Wait until Vue has actually rendered content into the mount point.
-await page.waitForSelector('#app > *', { timeout: 15000 })
-const html = await page.content()
-await browser.close()
+try {
+  const { render } = await vite.ssrLoadModule('/src/entry-server.js')
+  const appHtml = await render()
 
-writeFileSync(indexPath, html)
-console.log(`Prerendered ${indexPath}`)
-
-// Preview keep-alive connections can hold the process open; exit explicitly.
-process.exit(0)
+  const template = readFileSync(indexPath, 'utf-8')
+  const html = template.replace(
+    '<div id="app"></div>',
+    `<div id="app">${appHtml}</div>`
+  )
+  writeFileSync(indexPath, html)
+  console.log(`Prerendered ${indexPath}`)
+} finally {
+  await vite.close()
+}
