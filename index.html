@@ -8,12 +8,54 @@
       content="Jelmer de Jong — freelance Laravel & Vue developer. Direct contact, geen overhead."
     />
     <title>Jelmer de Jong — Freelance Laravel & Vue developer</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Jelmer de Jong — Freelance Laravel & Vue developer" />
+    <meta
+      property="og:description"
+      content="Direct contact, geen overhead. 10+ jaar PHP/Laravel ervaring."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://heldergebouwd.nl" />
+    <meta property="og:image" content="https://heldergebouwd.nl/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jelmer de Jong — Freelance Laravel & Vue developer" />
+    <meta
+      name="twitter:description"
+      content="Direct contact, geen overhead. 10+ jaar PHP/Laravel ervaring."
+    />
+    <meta name="twitter:image" content="https://heldergebouwd.nl/og-image.jpg" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://heldergebouwd.nl/#jelmer",
+            "name": "Jelmer de Jong",
+            "url": "https://heldergebouwd.nl",
+            "jobTitle": "Freelance Laravel & Vue developer",
+            "sameAs": ["https://github.com/dejong-jelmer"]
+          },
+          {
+            "@type": "Organization",
+            "name": "Omdat We Reizen",
+            "url": "https://omdatwereizen.nl",
+            "description": "Duurzame treinreizen door Europa",
+            "founder": { "@id": "https://heldergebouwd.nl/#jelmer" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>
