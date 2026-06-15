@@ -5,3 +5,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Houd de sticky navbalk weg van de kop van een sectie bij anchor-navigatie */
+section[id] {
+  scroll-margin-top: 4rem;
+}

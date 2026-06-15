@@ -1,4 +1,5 @@
 <script setup>
+import { SITE_NAME } from '../../config'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const links = [
@@ -55,7 +56,7 @@ onBeforeUnmount(() => {
   >
     <div class="mx-auto flex max-w-3xl items-center justify-between gap-4 px-6 py-3">
       <a href="#hero" class="text-sm font-semibold text-slate-800 transition-colors duration-150 ease-in-out hover:text-sky-600">
-        heldergebouwd.nl
+        {{SITE_NAME}}
       </a>
 
       <!-- Desktop navigation -->
@@ -121,7 +122,7 @@ onBeforeUnmount(() => {
       <div
         v-show="isMenuOpen"
         id="mobile-menu"
-        class="border-t border-zinc-200 bg-white md:hidden"
+        class="absolute inset-x-0 top-full border-t border-zinc-200 bg-white shadow-sm md:hidden"
       >
         <ul class="mx-auto flex max-w-3xl flex-col gap-1 px-6 py-3">
           <li v-for="link in links" :key="link.id">
