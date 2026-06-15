@@ -35,4 +35,4 @@ src/
 
 ## Deploy
 
-`npm run build` genereert een volledig statische site in `dist/`. De site draait op Cloudflare (Workers static assets); `wrangler.jsonc` regelt de SPA-fallback via `not_found_handling: "single-page-application"`. Let op: Cloudflare accepteert géén `/* /index.html 200`-regel in een `_redirects`-bestand — dat geeft een infinite-loop-fout bij de deploy.
+`npm run build` genereert een volledig statische site in `dist/`. De site draait op Cloudflare (Workers static assets); `wrangler.jsonc` regelt de SPA-fallback via `not_found_handling: "single-page-application"`.

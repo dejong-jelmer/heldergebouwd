@@ -1,3 +1,20 @@
+<script setup>
+import { onMounted } from 'vue';
+import { CONTACT_EMAIL_PARTS } from "../../config";
+
+const [user, domain] = CONTACT_EMAIL_PARTS;
+
+onMounted(() => {
+  const link = document.getElementById("contact-email");
+  if (link instanceof HTMLAnchorElement) {
+    
+    const email = CONTACT_EMAIL_PARTS.join("@");
+    link.href = `mailto:${email}`;
+    link.textContent = email;
+  }
+});
+
+</script>
 <template>
   <section id="contact" aria-labelledby="contact-heading" class="py-16">
     <h2 id="contact-heading" class="text-2xl font-semibold tracking-tight text-slate-800">
@@ -8,8 +25,8 @@
     </p>
 
     <div class="mt-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-      <a href="mailto:hallo@heldergebouwd.nl">
-        <span class="font-semibold text-slate-800 underline">hallo@heldergebouwd.nl</span>
+      <a id="contact-email" class="font-semibold text-slate-800 underline" >
+        {{ user }} [at] {{ domain }}
       </a>
       <a href="https://github.com/dejong-jelmer" target="_blank" rel="noopener noreferrer"
         class="inline-flex items-center gap-2 rounded-lg border border-zinc-200 bg-white px-4 py-2 text-sm font-semibold text-slate-800 transition-colors duration-150 ease-in-out hover:border-sky-600 hover:text-sky-600">

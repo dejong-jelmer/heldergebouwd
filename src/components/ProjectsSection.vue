@@ -1,4 +1,6 @@
 <script setup>
+import { AUTHOR_FIRST_NAME } from '../../config'
+
 const projects = [
   {
     title: 'Omdat We Reizen',
@@ -8,6 +10,14 @@ const projects = [
     link: 'https://omdatwereizen.nl',
     linkLabel: 'Duurzame treinreizen op omdatwereizen.nl',
   },
+  {
+    title: `Jelmer — Fotografie`,
+    description:
+      'Eigen fotografieportfolio: een Instagram-achtige grid met PhotoSwipe-lightbox en foto-series. Statisch gebouwd met Astro — geen CMS of backend, content beheren is simpelweg een bestand toevoegen en pushen.',
+    tags: ['Astro', 'Tailwind CSS', 'PhotoSwipe', 'Cloudflare'],
+    link: 'https://jelmerfoto.nl',
+    linkLabel: 'Bekijk de fotografie op jelmerfoto.nl',
+  },
 ]
 </script>
 
@@ -16,7 +26,7 @@ const projects = [
     <h2 id="projects-heading" class="text-2xl font-semibold tracking-tight text-slate-800">
       Projecten
     </h2>
-    <div class="mt-6 max-w-xl">
+    <div class="mt-6 grid gap-4 sm:grid-cols-2">
       <article
         v-for="project in projects"
         :key="project.title"
