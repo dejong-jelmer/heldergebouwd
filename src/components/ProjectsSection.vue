@@ -5,8 +5,8 @@ const projects = [
   {
     title: 'Omdat We Reizen',
     description:
-      'Duurzame treinreizen door Europa. Sinds 2025 mijn eigen reisorganisatie, met een boekingsplatform dat ik zelf bouw en onderhoud: van databaseontwerp en boekingsflow tot design en CI/CD. Gebouwd met Laravel, Inertia.js en Vue 3.',
-    tags: ['Laravel', 'Inertia.js', 'Vue 3', 'Tailwind CSS'],
+      'Duurzame treinreizen door Europa. Sinds 2025 mijn eigen reisorganisatie, met een boekingsplatform dat ik zelf bouw en onderhoud: van databaseontwerp en boekingsflow tot design en CI/CD. Gebouwd met Laravel, Inertia.js en Vue.js.',
+    tags: ['Laravel', 'Inertia.js', 'Vue.js', 'Tailwind CSS'],
     link: 'https://omdatwereizen.nl',
     linkLabel: 'Duurzame treinreizen op omdatwereizen.nl',
   },
@@ -33,7 +33,7 @@ const cases = [
     title: 'Telecom- en callcentersoftware',
     role: 'Developer, 2017 tot 2019',
     description:
-      'Mijn eerste developerbaan, direct na het onderwijs. Callcenters volgden hun campagnes in een dashboard met belstatistieken en campagne-analytics. Dat dashboard was gebouwd in Java en moest lokaal geïnstalleerd worden bij de klant. Dat kostte veel support: elke installatie en elke update was apart werk, en klanten liepen tegen problemen aan die per werkplek konden verschillen. Mijn opdracht was om dat dashboard webbased te maken, in Laravel en Vue. Geen installatie meer, inloggen was genoeg, en een update kwam in één keer bij iedereen terecht. Daarnaast bouwde ik API-integraties om data met externe systemen te synchroniseren en deed ik dagelijks support op klantissues. Die combinatie was leerzaam: wie zelf de meldingen beantwoordt over wat er gebouwd is, gaat vanzelf anders bouwen.',
+      'Mijn eerste developerbaan, direct na het onderwijs. Callcenters draaiden hun campagnes op belscripts: teksten met een keuzeflow erin, die het telefoongesprek stuurde en de antwoorden opsloeg. Die bouwde ik in HTML, PHP en JavaScript, en ik maakte er integraties bij die tijdens het gesprek live data ophaalden. Denk aan energieprijzen, op basis van het adres dat net was ingevuld. Daarnaast loste ik issues op in de bestaande Java-applicatie die lokaal bij klanten draaide, via SSH op de server of door de pc van de klant over te nemen. En ik werkte aan de opvolger daarvan, een webversie in Laravel en Vue, een traject dat nog liep toen ik vertrok. Ik kwam uit het onderwijs en moest me redden in code van een ander. Dat is precies waar ik het meeste heb geleerd.',
     tags: ['Laravel', 'Vue', 'MySQL', "API's"],
   },
 ]

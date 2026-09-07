@@ -6,11 +6,11 @@ const skillGroups = [
   },
   {
     label: 'Frontend',
-    skills: ['Vue 3', 'Inertia.js', 'Tailwind CSS', 'Livewire', 'Alpine.js'],
+    skills: ['Vue.js', 'Inertia.js', 'Tailwind CSS', 'Livewire', 'Alpine.js'],
   },
   {
     label: 'Testing & Quality',
-    skills: ['PHPUnit', 'Laravel Pint'],
+    skills: ['PHPUnit', 'Laravel Pint', 'PHPStan'],
   },
   {
     label: 'Tooling',
