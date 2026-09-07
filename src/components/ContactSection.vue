@@ -50,7 +50,7 @@ onMounted(() => {
       </p>
       <a href="https://omdatwereizen.nl" target="_blank" rel="noopener"
         class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-sky-600 transition-colors duration-150 ease-in-out hover:text-sky-700">
-        Duurzame treinreizen door Europa — omdatwereizen.nl
+        Duurzame treinreizen door Europa: omdatwereizen.nl
         <span aria-hidden="true">&rarr;</span>
       </a>
     </aside>

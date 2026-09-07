@@ -9,8 +9,12 @@ const skillGroups = [
     skills: ['Vue 3', 'Inertia.js', 'Tailwind CSS', 'Livewire', 'Alpine.js'],
   },
   {
+    label: 'Testing & Quality',
+    skills: ['PHPUnit', 'Laravel Pint'],
+  },
+  {
     label: 'Tooling',
-    skills: ['Docker', 'Git'],
+    skills: ['Docker', 'Git', 'GitHub Actions', 'CI/CD'],
   },
 ]
 </script>

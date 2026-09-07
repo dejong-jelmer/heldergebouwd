@@ -16,7 +16,7 @@ import { AUTHOR_FULL_NAME } from '../../config'
       {{ AUTHOR_FULL_NAME }}
     </h1>
     <p class="mt-3 max-w-md text-lg text-slate-500">
-      Freelance Laravel &amp; Vue developer — direct contact, geen overhead
+      Freelance Laravel &amp; Vue developer. Direct contact, geen overhead
     </p>
     <div class="mt-8 flex flex-col gap-3 sm:flex-row">
       <a
